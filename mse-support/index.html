@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  </head>
+  <body bgcolor="#0066FF">
+    <br>
+    <div>
+      <input type="text" id="codecParams" name="codecParams"><br><br>
+      <button id="getSupport">Setup MediaSource</button>
+      <label id="supportInfo">NULL</label>
+    </div>
+    <script>
+      var codecInfo = null;
+      var support = null;
+
+      $("#getSupport").click(function() {
+          getSupport();
+      });
+
+      function getSupport() {
+          if ('MediaSource' in window) {
+            codecInfo = document.getElementById('codecParams').value
+            support = MediaSource.isTypeSupported(codecInfo)
+            document.getElementById('supportInfo').innerHTML = support ? "TRUE" : "FALSE";
+          } else {
+              console.log('MediaSource not "in window');
+          }
+      }
+    </script>
+  </body>
+</html>
