@@ -5,7 +5,7 @@
   <body bgcolor="#0066FF">
     <br>
     <div>
-      <video id="video" controls="" width="480" controls style="display: none">
+      <video id="video" controls="" width="480" muted="muted" controls style="display: none">
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
         Sorry, your browser doesn't support embedded videos.
       </video>
@@ -45,6 +45,10 @@
         canvas.style.display = 'block'
         video.pause()
       }
+      
+      setTimeout(paint, 2000)
+      setTimeout(play, 3000)
+      setTimeout(stop, 7000)
     </script>
   </body>
 </html>
