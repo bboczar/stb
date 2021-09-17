@@ -16,6 +16,9 @@
       <button id="play">Play </button>
       <button id="stop">Stop</button>
     </div>
+    <img id="img"
+       src="https://sky.play.works/service/apps/crossy_road/sprites/hipster-whale.png"
+       width="480" height="270" style="position:relative;left:100px;display:none;">
     <script>
       $("#paint").click(function() {
         paint();
@@ -32,11 +35,8 @@
 
       function paint() {
         var ctx = canvas.getContext("2d");
-        var img = new Image;
-        img.onload = function(){
-          ctx.drawImage(img,0,0,480,270);
-        };
-        img.src = "https://sky.play.works/service/apps/crossy_road/sprites/hipster-whale.png";
+        var img = document.getElementById('img');
+        ctx.drawImage(img,0,0,480,270);
       }
       function play() {
         video.style.display = 'block'
@@ -51,8 +51,8 @@
       
       $(document).ready(function() {
         setTimeout(paint, 2000)
-        setTimeout(play, 10000)
-        setTimeout(stop, 13000)
+        setTimeout(play, 7000)
+        setTimeout(stop, 10000)
       });
     </script>
   </body>
