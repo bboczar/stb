@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  </head>
+  <body bgcolor="#0066FF">
+    <br>
+    <div>
+      <canvas id="canvas" width="480" height="270" style="">
+    </div>
+    <img id="img"
+       src="https://sky.play.works/service/apps/crossy_road/sprites/hipster-whale.png"
+       width="480" height="270" style="position:relative;left:100px;display:none;">
+    <script>
+      var canvas = document.getElementById('canvas')
+
+      function paint() {
+        var ctx = canvas.getContext("2d");
+        var img = document.getElementById('img');
+        ctx.drawImage(img,0,0,480,270);
+      }
+      
+      $(document).ready(function() {
+        setTimeout(paint, 2000)
+      });
+    </script>
+  </body>
+</html>
