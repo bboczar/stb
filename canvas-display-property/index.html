@@ -13,8 +13,10 @@
     </div>
     <div>
       <button id="paint">Paint</button>
-      <button id="play">Play </button>
+      <button id="play">Play</button>
       <button id="stop">Stop</button>
+      <button id="changeCanvasWidthUp">changeCanvasWidthUp</button>
+      <button id="changeCanvasWidthDown">changeCanvasWidthDown</button>
     </div>
     <img id="img"
        src="https://sky.play.works/service/apps/crossy_road/sprites/hipster-whale.png"
@@ -29,24 +31,41 @@
       $("#stop").click(function() {
         stop();
       });
+      $("#changeCanvasWidthUp").click(function() {
+        changeCanvasWidthUp();
+      });
+      $("#changeCanvasWidthDown").click(function() {
+        changeCanvasWidthDown();
+      });
       
       var video = document.getElementById('video')
       var canvas = document.getElementById('canvas')
 
       function paint() {
+        console.log("paint")
         var ctx = canvas.getContext("2d");
         var img = document.getElementById('img');
         ctx.drawImage(img,0,0,480,270);
       }
       function play() {
+        console.log("play")
         video.style.display = 'block'
         canvas.style.display = 'none'
         video.play()
       }
       function stop() {
+        console.log("stop")
         video.style.display = 'none'
         canvas.style.display = 'block'
         video.pause()
+      }
+      function changeCanvasWidthUp() {
+        console.log("changeCanvasWidthUp")
+        canvas.style.width = '481'
+      }
+      function changeCanvasWidthDown() {
+        console.log("changeCanvasWidthDown")
+        canvas.style.width = '479'
       }
     </script>
   </body>
