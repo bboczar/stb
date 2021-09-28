@@ -13,6 +13,7 @@
     </div>
     <div>
       <button id="paint">Paint</button>
+      <button id="paint2">Paint2</button>
       <button id="play">Play</button>
       <button id="stop">Stop</button>
       <button id="changeCanvasWidthUp">changeCanvasWidthUp</button>
@@ -21,9 +22,16 @@
     <img id="img"
        src="https://sky.play.works/service/apps/crossy_road/sprites/hipster-whale.png"
        width="480" height="270" style="position:relative;left:100px;display:block;">
+    <img id="img2"
+       src="https://makassar.transstudiomall.com/asset/tenant/20190218014101000000.jpg"
+       width="480" height="270" style="position:relative;left:100px;display:block;">
+
     <script>
       $("#paint").click(function() {
         paint();
+      });
+      $("#paint2").click(function() {
+        paint2();
       });
       $("#play").click(function() {
         play();
@@ -45,6 +53,12 @@
         console.log("paint")
         var ctx = canvas.getContext("2d");
         var img = document.getElementById('img');
+        ctx.drawImage(img,0,0,480,270);
+      }
+      function paint2() {
+        console.log("paint2")
+        var ctx = canvas.getContext("2d");
+        var img = document.getElementById('img2');
         ctx.drawImage(img,0,0,480,270);
       }
       function play() {
